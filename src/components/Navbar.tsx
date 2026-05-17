@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Phone, Calendar } from 'lucide-react';
 import { getAppData } from '../data';
+import logoUrl from '../assets/images/logo.png';
 
 export default function Navbar() {
   const location = useLocation();
@@ -39,14 +40,8 @@ export default function Navbar() {
       transition: 'background-color 200ms ease, backdrop-filter 200ms ease',
       zIndex: 1000
     }} className="desktop-only">
-      <Link to="/" style={{
-        fontFamily: 'var(--font-serif)',
-        fontSize: '28px',
-        color: 'var(--accent-gold)',
-        letterSpacing: '0.15em',
-        fontWeight: 300
-      }}>
-        7SPICE
+      <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+        <img src={logoUrl} alt="7Spice Logo" style={{ height: '65px', width: 'auto', objectFit: 'contain' }} />
       </Link>
       
       <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>

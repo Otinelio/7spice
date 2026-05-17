@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { getAppData, saveAppData, ADMIN_PASSWORD, type AppData } from '../data';
 import { LogOut, Save, Pencil, Trash2, Copy, Plus, ArrowUp, ArrowDown } from 'lucide-react';
+import logoUrl from '../assets/images/logo.png';
 
 export default function Admin() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem("7spice_admin_auth") === "true");
@@ -49,7 +50,7 @@ export default function Admin() {
           maxWidth: '400px',
           textAlign: 'center'
         }}>
-          <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '28px', marginBottom: '24px' }}>7SPICE</h1>
+          <img src={logoUrl} alt="7Spice Logo" style={{ height: '100px', width: 'auto', objectFit: 'contain', marginBottom: '24px' }} />
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <input 
               type="password" 

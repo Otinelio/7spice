@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Clock, MessageCircle } from 'lucide-react';
 import { getAppData } from '../data';
+import logoUrl from '../assets/images/logo.png';
 
 export default function Footer() {
   const { restaurant } = getAppData();
@@ -19,12 +20,7 @@ export default function Footer() {
         gap: '40px'
       }}>
         <div>
-          <h2 style={{
-            fontFamily: 'var(--font-serif)',
-            fontSize: '28px',
-            color: 'var(--accent-gold)',
-            marginBottom: '4px'
-          }}>7SPICE</h2>
+          <img src={logoUrl} alt="7Spice Logo" style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '16px' }} />
           <p style={{ opacity: 0.5, fontSize: '13px', marginBottom: '20px' }}>{restaurant.tagline}</p>
           <div style={{ display: 'flex', gap: '16px' }}>
             <a href={restaurant.instagram} target="_blank" rel="noreferrer" style={{ opacity: 0.8, transition: 'color 200ms ease' }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent-gold)'} onMouseOut={e => e.currentTarget.style.color = ''}>
